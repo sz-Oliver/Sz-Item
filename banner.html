@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul,li{list-style:none;padding:0;margin:0;}
+        .lf{float:left;}
+        .b-imgs{width:1000px;height:400px;margin:auto;overflow:hidden;background:#fff;position:relative;}
+        .b-imgs .banner-imgs{
+            position:absolute;width:4000px;
+            left:0;top:0;
+            text-align:center;
+        }
+        .b-imgs .banner-imgs>li{
+            width:900px;margin:50px;
+        }
+        .btns{
+            width:50px;position:absolute;
+            left:50%;margin-left:-25px;
+            bottom:10px;bottom:20px;
+        }
+        .btns>li{
+            float:left;
+            width:10px;height:10px;
+            border-radius:50%;
+            border:1px solid #000;
+            margin-left:4px;
+            background:#fff;
+        }
+        .btns>li:hover{background:blue;}
+        .btns>li.active{background:blue;}
+    </style>
+</head>
+<body>
+    <div class="b-imgs">
+        <ul class="banner-imgs">
+            <li class="lf">
+                <img src="images/t-1.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt a voluptate minus ullam sit tenetur facilis tempora doloremque dolores. Praesentium, in, adipisci illo porro quibusdam aliquam illum voluptas voluptates aut.</p>
+                <h2>Mark Trand</h2>
+            </li>
+            <li class="lf">
+                <img src="images/t-2.jpg" alt="">
+                <p> sit amet, consectetur adipisicing elit. Nesciunt a voluptate minus ullam sit tenetur facilis tempora doloremque dolores. Praesentium, in, adipisci illo porro quibusdam aliquam illum voluptas voluptates aut.</p>
+                <h2>Mark Trand</h2>
+            </li>
+            <li class="lf">
+                <img src="images/t-3.jpg" alt="">
+                <p>sectetur adipisicing elit. Nesciunt a voluptate minus ullam sit tenetur facilis tempora doloremque dolores. Praesentium, in, adipisci illo porro quibusdam aliquam illum voluptas voluptates aut.</p>
+                <h2>Mark Trand</h2>
+            </li>
+            <li class="lf">
+                <img src="images/t-1.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt a voluptate minus ullam sit tenetur facilis tempora doloremque dolores. Praesentium, in, adipisci illo porro quibusdam aliquam illum voluptas voluptates aut.</p>
+                <h2>Mark Trand</h2>
+            </li>
+        </ul>
+        <ul class="btns">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        var $imgs=$(".banner-imgs");
+        var $btns=$(".btns");
+        var moved=0,timer=null,w=1000;
+        $btns.on("click","li",function(){
+            var $li=$(this);
+            var i=$li.index();
+            moved=i;
+            $imgs.stop(true).animate({left:-w*moved},500,function(){
+                show();
+            })
+        })
+        function show(){
+            $btns.children("li:eq("+moved+")").addClass("active").siblings().removeClass("active");
+        }
+        function move(){
+            moved++;
+            $imgs.stop(true).animate({left:-w*moved},500,function(){
+                show();
+            })
+            if(moved==3) {
+                $imgs.css("left", "0")
+                moved = 0;
+            }
+        }
+        timer=setInterval(move,3000);
+        $(".b-imgs").hover(function(){
+            clearInterval(timer);
+            timer=null;
+        },function(){
+            timer=setInterval(move,3000);
+        })
+    </script>
+</body>
+</html>

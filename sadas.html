@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.d1{
+			width:100px;
+			height:100px;
+			background:#222;
+			text-align:center;
+		}
+		.d1>a{
+			display:inline-block;
+			background:url("images/img-sprite.png") no-repeat 0 0;
+			width:30px;height:30px;
+			transition:.5s linear;
+			position:relative;
+		}
+		.d1>a:hover{
+			background-position:0 -30px;
+		}
+		.d1>a>span{
+			display:inline-block;
+			padding:5px;
+			background:red;
+			position:absolute;
+			top:0;
+			left:-10px;
+			transition:.5s linear;
+			visibility:hidden;
+			opacity:0;
+		}
+		.d1>a:hover span{
+			top:40px;
+			visibility:visible;
+			opacity:1;
+		}
+		.d1>a>span:before{
+			content:'';
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-bottom: 5px solid #F77E2A;
+			width: 0;
+			height:0;
+			position:absolute;
+			left:20px;
+			top:-5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="d1">
+		<a href="#">
+			<span>hello</span>
+		</a>
+	</div>
+</body>
+</html>

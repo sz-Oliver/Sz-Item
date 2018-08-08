@@ -1,0 +1,41 @@
+.head-img{
+	background:url("../images/basic01.jpg") no-repeat 0px 0px ;
+	background-size:cover;
+	min-height:300px !important;
+}
+header{background:#F8F6DE;}
+.navbar-default{
+	background:none;
+	border:none;
+	margin:0;
+}
+#menu{
+	float:right;
+	font-size:1em;
+}
+#menu>ul a{
+	color:#174495;
+	font-weight:bold;
+	border-bottom:2px solid transparent;
+}
+#menu>ul a:hover{
+	color:rgba(255,0,0,.8);
+	border-bottom:2px solid rgba(255,0,0,.8);
+}
+.container-fluid{
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.navbar-header .navbar-brand{
+	font-size:3em;
+	color:#174495;
+	font-weight:bold;
+}
+.navbar-header .navbar-brand:hover{
+	color:#174495;
+}
+#menu>ul>li.active{
+	/*background-color: #F8F6DE;*/
+	background-color:rgba(255,0,0,.8);
+	/*border-bottom:2px solid rgba(255,0,0,.8);*/
+}

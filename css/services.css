@@ -1,0 +1,128 @@
+*{font-family: 'Open Sans', sans-serif;font-size:14px}
+p{color:#7c7c7c;line-height:1.8em}
+li{color:#7c7c7c;font-weight:400;}
+h1{
+    font-family: 'Play', sans-serif;
+    color: #F77E2A;
+    text-align: center;
+    font-weight:bold;
+    margin:1.5em 0;
+}
+h3,h4{
+    font-family:'Play', sans-serif;
+    font-weight:bold;
+    padding:5px;
+}
+.services,.featured-services,.our-service,.our-offers{
+    padding-bottom:3em;
+}
+.services .s-content{
+    margin-top:3em;
+}
+.s-img{
+    padding:0;
+    overflow:hidden;
+}
+.s-img img{
+    transition:all .5s linear;
+    transform:scale(1);
+    border-radius:5px;
+}
+.s-img img:hover{
+    transform:rotate(-5deg) scale(1.2);
+}
+.s-text h3{
+    margin-top:0;
+}
+.services .s-content p{
+    line-height:1.5em;
+}
+.featured-services{
+    background:rgba(248, 126, 42, 0.12);
+}
+.fs-content{
+    text-align:center;
+    margin-top:30px;
+}
+.icon{
+    margin-bottom:20px;
+}
+.hi-icon{
+    display: inline-block;
+    font-size: 25px;
+    padding:20px;
+    border:4px solid rgba(0,0,255,.5);
+    border-radius:50%;
+    text-decoration:none;
+    color: #000;
+    cursor:pointer;
+}
+.hi-icon:hover{
+    color:#F77E2A;
+    animation: spinAround 2s linear infinite;
+}
+@keyframes spinAround{
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+.o-content{
+    text-align:center;
+}
+.oo-content{
+    text-align:center;
+    display:flex;
+    flex-wrap:no-wrap;
+    justify-content:space-between;
+}
+.our-offers{
+    background:#eee;
+}
+.o-item{
+    background:rgba(248, 126, 42, 0.12);
+    text-align:center;
+    padding:0;
+    margin-right:20px;
+    width:25%;
+}
+.o-item ul{
+    margin:0;
+}
+.o-item li{
+    text-align:left;
+    padding:10px 15px;
+    border-bottom:1px solid #fff;
+}
+.o-item h4 {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0;
+    text-transform: capitalize;
+    background: #25503D;
+    padding: 0.5em 0;
+}
+.lift{
+    display:none;position:fixed;top:400px;left:0;
+    background:#ddd;
+}
+.lift ul{margin:0;}
+.lift li{
+    padding:5px;
+    border-bottom:1px solid #fff;
+    cursor:pointer;
+    color:#c9302c;
+}
+.lift li>span{
+    padding-left:3px
+}
+.lift li.active{
+    color:#fff;
+    background:#174495;
+}
+.lift li:hover{
+    color:#fff;
+    background:#174495;
+}
+.o-item .canvals-1{
+	height:200px;
+	background:#ddd;
+}
